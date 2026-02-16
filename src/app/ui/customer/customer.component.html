@@ -1,0 +1,20 @@
+<table class="table m-4 rounded-5 shadow-lg">
+  <thead>
+  <tr>
+    <th scope="col">First name</th>
+    <th scope="col">Last name</th>
+    <th scope="col">Email</th>
+  </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    @if (customersData$) {
+      @for (customer of customersData$ | async; track customer.id) {
+        <tr>
+          <td>{{ customer.firstName }}</td>
+          <td>{{ customer.lastName }}</td>
+          <td>{{ customer.email }}</td>
+        </tr>
+      }
+    }
+  </tbody>
+</table>

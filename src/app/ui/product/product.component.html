@@ -1,0 +1,20 @@
+<table class="table m-4 rounded-5 shadow-lg">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Description</th>
+    <th scope="col">Price</th>
+  </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    @if (productsData$) {
+      @for (product of productsData$ | async; track product.id) {
+        <tr>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price | currency: 'MAD' }}</td>
+        </tr>
+      }
+    }
+  </tbody>
+</table>
