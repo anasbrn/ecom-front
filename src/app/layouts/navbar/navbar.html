@@ -18,5 +18,14 @@
         }
       </ul>
     </div>
+    <div class="d-flex gap-2 justify-content-between align-items-center">
+      <span>{{ user?.username }}</span>
+      @if (isLoggedIn) {
+        <button (click)="logout()" class="btn btn-light">Logout</button>
+      }
+      @if (!isLoggedIn) {
+        <button (click)="login()" class="btn btn-light">Login</button>
+      }
+    </div>
   </div>
 </nav>
